@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is services</h1>
+
+    <!-- <h1 th:insert="~{base::parent('this is services 1','this is services two')}"></h1> -->
+
+    <div th:replace="~{base::parent(~{::#second_content})}">
+        <section id="main_content">
+            <h1>This is dynamic services passed by base file main content</h1>
+        </section>
+        <section id="second_content">
+            <h1>This is dynamic services passed by base file SECOND Content</h1>
+        </section>
+    </div>
+</body>
+</html>

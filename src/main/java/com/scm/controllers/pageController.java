@@ -17,4 +17,18 @@ public class pageController {
         return "home";
         
     }
+
+    @RequestMapping("/about")
+    public String aboutPage(Model model){
+        model.addAttribute("isActive", true);
+        System.out.println("This is about page");
+        return "about";
+    }
+
+
+    @RequestMapping("/services")
+    public String servicesPage(){
+        System.out.println("This is about page");
+        return "services";
+    }
 }
