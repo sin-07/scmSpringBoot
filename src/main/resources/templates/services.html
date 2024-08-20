@@ -10,12 +10,25 @@
 
     <!-- <h1 th:insert="~{base::parent('this is services 1','this is services two')}"></h1> -->
 
-    <div th:replace="~{base::parent(~{::#second_content})}">
+    <!-- <div th:replace="~{base::parent(~{::#second_content})}">
         <section id="main_content">
             <h1>This is dynamic services passed by base file main content</h1>
         </section>
         <section id="second_content">
             <h1>This is dynamic services passed by base file SECOND Content</h1>
+        </section>
+    </div> -->
+
+
+    <div th:replace="${isActive} ? ~{base :: parent(~{::#logIn})} : ~{base :: test(~{::#logOut})}">
+        <section id="logIn">
+            <h1>User is logged in</h1>
+            <h1>This is dynamic services passed by base file</h1>
+        </section>
+
+        <section id="logOut">
+            <h1>User is loggedOut</h1>
+            <h1>This is dynamic services passed by base file</h1>
         </section>
     </div>
 </body>

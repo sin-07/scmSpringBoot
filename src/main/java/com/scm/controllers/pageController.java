@@ -20,14 +20,15 @@ public class pageController {
 
     @RequestMapping("/about")
     public String aboutPage(Model model){
-        model.addAttribute("isActive", true);
+        model.addAttribute("isActive", false);
         System.out.println("This is about page");
         return "about";
     }
 
 
     @RequestMapping("/services")
-    public String servicesPage(){
+    public String servicesPage(Model model){
+        model.addAttribute("isActive", true);
         System.out.println("This is about page");
         return "services";
     }

@@ -14,9 +14,13 @@
 
     <!-- <div th:insert="~{base::parent('one','two')}"> </div> -->
 
-    <div th:replace="${isActive} ? ~{base::parent(~{::section})} : ~{base::test}">
-        <section>
+    <div th:replace="${isActive} ? ~{base::parent(~{::#logIn})} : ~{base::parent(~{::#logOut})}">
+        <section id="logIn">
             <h1>User is logged in</h1>
+            <h1>This is dynamic ABOUT passed by base file</h1>
+        </section>
+        <section id="logOut">
+            <h1>User is logged out</h1>
             <h1>This is dynamic ABOUT passed by base file</h1>
         </section>
     </div>
