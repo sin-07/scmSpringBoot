@@ -1,30 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" th:replace="~{base :: parent(~{::#about},~{::title},~{::script})}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>About</title>
 </head>
-
 <body>
-    <h1>This is about Page</h1>
-
-    <!-- using fragment -->
-
-    <!-- <div th:insert="~{base::parent('one','two')}"> </div> -->
-
-    <div th:replace="${isActive} ? ~{base::parent(~{::#logIn})} : ~{base::parent(~{::#logOut})}">
-        <section id="logIn">
-            <h1>User is logged in</h1>
-            <h1>This is dynamic ABOUT passed by base file</h1>
-        </section>
-        <section id="logOut">
-            <h1>User is logged out</h1>
-            <h1>This is dynamic ABOUT passed by base file</h1>
-        </section>
+    <div id="about">
+        <h1>
+            this is about page
+        </h1>
     </div>
 
+    <script>
+        console.log("About page")
+    </script>
 </body>
-
 </html>
