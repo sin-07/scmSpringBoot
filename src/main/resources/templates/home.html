@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" th:replace="~{base :: parent(~{::#home},~{::title},~{::script})}">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home page</title>
     <link rel="stylesheet" th:href="@{'/css/output.css'}">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 
 <body>
-    <div class="container bg-slate-200  w-1/2 mx-auto p-2">
+    <div id="home" class="container bg-slate-200  w-1/2 mx-auto p-2">
         <h1 data-th-text="${title}" class="font-bold text-2xl"></h1>
         <h2 class="text-red-500">Youtube Channel: <span data-th-text="${youtubeChannel}"></span> </h2>
         <h3 th:text="${github}"></h3>
